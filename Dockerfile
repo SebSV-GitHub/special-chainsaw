@@ -6,6 +6,6 @@ COPY package*.json .
 
 RUN npm i --omit=dev
 
-COPY ./src/* .
+COPY ./src ./src
 
 CMD [ "npm", "start" ]

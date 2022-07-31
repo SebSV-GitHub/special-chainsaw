@@ -4,7 +4,7 @@
   "description": "X Backend Engineer test",
   "main": "src/index.js",
   "scripts": {
-    "start": "node -r esm -r dotenv/config .",
+    "start": "node -r esm .",
     "dev": "nodemon -r esm -r dotenv/config .",
     "test": "jest"
   },
