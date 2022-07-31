@@ -1,7 +1,12 @@
 import { Schema, model } from "mongoose";
 
 const TransactionSchema = new Schema({
-  request: String,
+  path: String,
+  ip: String,
+  method: String,
+  params: Map,
+  request: Map,
+  response: Map,
   at: String,
 });
 

@@ -2,6 +2,7 @@ import express, { json } from "express";
 import load from "./loaders";
 import modules from "./modules";
 import logTransaction from "./middlewares/logTransaction";
+import errorHandler from "./middlewares/errorHandler";
 
 const app = new express();
 
@@ -18,8 +19,11 @@ app.get("/health-check", (_req, res) => {
 
 app.use(modules);
 
+app.use(errorHandler);
 app.use(logTransaction);
 
-app.listen(8080, () => {
-  console.log("App running");
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => {
+  console.log(`App running on port ${PORT}`);
 });

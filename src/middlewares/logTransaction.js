@@ -1,11 +1,21 @@
-import Transaction from "../models/Transaction";
+import { createTransaction } from "../modules/Transactions/transactions.dao";
 
 async function logTransaction(req, res, next) {
-  const transaction = new Transaction({
-    request: req.originalUrl,
+  await createTransaction({
+    path: req.originalUrl,
+    ip: req.ip,
+    method: req.method,
+    params: req.params,
+    request: {
+      headers: req.headers,
+      payload: req.body,
+      user: req.user,
+    },
+    response: {
+      status: res.statusCode,
+    },
     at: Date.now(),
   });
-  await transaction.save();
   next();
 }
 
