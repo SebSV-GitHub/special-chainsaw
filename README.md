@@ -2,8 +2,6 @@
 
 Backend Engineer test
 
-> 👽 Hey! Si eres la persona que esta revisando mi codigo, le conte a la reclutadora que tuve un problema de salud, sin embargo, como no recibi respuesta de si podia continuar con el codigo y me molestaba que no estuviera terminado. Termine la funcionalidad en 1:43:24.
-
 ## 📞 Requests
 
 Inside the code there's a file called `Insomnia_2022-07-31.json`.
@@ -20,7 +18,7 @@ Copy and paste the `.env` file. Replace the values with one that works for you.
 
 - Install the dependencies. 📦
 
-``` sh
+```sh
 npm i
 ```
 

@@ -6,9 +6,9 @@ const router = Router();
 
 router.post(
   "/users",
-  requestMiddleware((req, res) => {
+  requestMiddleware(async (req, res) => {
     const user = req.body;
-    controller.postUser(user);
+    await controller.postUser(user);
     res.sendStatus(201);
   })
 );

@@ -6,8 +6,9 @@ const router = Router();
 
 router.get(
   "/transactions",
-  requestMiddleware(async (_req, res) => {
-    const transactions = await controller.getTransactions();
+  requestMiddleware(async (req, res) => {
+    const { page } = req.query || 1;
+    const transactions = await controller.getTransactions(page);
     res.json({ transactions });
   })
 );
